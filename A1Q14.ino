@@ -1,5 +1,5 @@
-#define ECHO 12
-#define TRIG 13
+#define ECHO 6
+#define TRIG 7
 
 long duration;
 int distance;
