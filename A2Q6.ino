@@ -1,0 +1,73 @@
+#include <Arduino.h>
+#include <WiFi.h>
+#include <WiFiMulti.h>
+#include <HTTPClient.h>
+
+WiFiMulti wifiMulti;
+WiFiServer server;
+
+void setup() {
+  pinMode(2, OUTPUT);
+
+  Serial.begin(9600);
+
+  Serial.println();
+  Serial.println();
+  Serial.println();
+
+  for (uint8_t t = 4; t > 0; t--) {
+    Serial.printf("[SETUP] WAIT %d...\n", t);
+    Serial.flush();
+    delay(1000);
+  }
+
+  wifiMulti.addAP("RP", "12345678");
+  wifiMulti.run();
+  if (wifiMulti.run() == WL_CONNECTED) {
+    Serial.println("");
+    Serial.println("WiFi connected");
+    Serial.println("IP address: ");
+    Serial.println(WiFi.localIP());
+  }
+  server.begin();
+}
+
+void loop() {
+  if ((wifiMulti.run() == WL_CONNECTED)) {
+
+    HTTPClient http;
+
+    Serial.print("[HTTP] begin...\n");
+
+    //HTTP // configure traged server and url
+    http.begin("https://iottest2022.000webhostapp.com/fetch.php?name=ledon");
+    Serial.print("[HTTP] GET...\n");
+    // start connection and send HTTP header
+    int httpCode = http.GET();
+    Serial.println("httpcode" + httpCode);
+    // httpCode will be negative on error
+    if (httpCode > 0) {
+      // HTTP header has been send and Server response header has been handled
+      Serial.printf("[HTTP] GET... code: %d\n", httpCode);
+
+      // file found at server
+      if (httpCode == HTTP_CODE_OK) {
+        String payload = http.getString();
+        Serial.println(payload);
+        if (payload == "1") {
+          digitalWrite(2, HIGH);
+          Serial.println("LED/Buzzer ON");
+        } else if (payload == "0") {
+          digitalWrite(2, LOW);
+          Serial.println("LED/Buzzer OFF");
+        }
+      }
+    } else {
+      Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
+    }
+
+    http.end();
+  }
+
+  delay(500);
+}
