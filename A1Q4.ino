@@ -1,13 +1,14 @@
-#define LED1 13
+// A1Q4. To interface BUZZER and write a program to turn ON/OFF Buzzer.
+
+#define BUZZ 13
+
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(LED1, OUTPUT);
+  pinMode(BUZZ, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  digitalWrite(LED1, HIGH);
+  digitalWrite(BUZZ, HIGH);
   delay(1000);
-  digitalWrite(LED1, LOW);
+  digitalWrite(BUZZ, LOW);
   delay(1000);
 }

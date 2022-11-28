@@ -1,10 +1,11 @@
+// A1Q6. Write a program to play a melody using buzzer.
+
 #define BUZZ 12
 void setup() {
   pinMode(BUZZ, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
     digitalWrite(BUZZ, LOW);
     delay(50);
     digitalWrite(BUZZ, HIGH);

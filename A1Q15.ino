@@ -1,3 +1,5 @@
+// A1Q15. Take only 3 readings of ultrasonic sensor (after trigger) at the intervals of 2 seconds then stop taking further readings. Average the readings and find out if that number is an Armstrong number or not. 
+
 #define ECHO 6
 #define TRIG 7
 
@@ -7,14 +9,12 @@ int distance;
 int n, r, s = 0, temp, sum, avg;
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
   pinMode(ECHO, INPUT);
   pinMode(TRIG, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   digitalWrite(TRIG, LOW);
   delayMicroseconds(10);
   digitalWrite(TRIG, HIGH);

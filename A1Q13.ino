@@ -1,10 +1,11 @@
+// A1Q13. To interface IR Sensor with Arduino and write a program to blink red or white LED. If the Transmitter transmit and Photodiode receives the rays then glow White LED else glow Red LED/play the buzzer.
+
 #define IRPIN 13
 #define LED1 12
 #define LED2 11
 #define BUZZ 10
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
   pinMode(IRPIN, INPUT);
   pinMode(LED1, OUTPUT);
@@ -13,7 +14,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   Serial.println("IR Range : ");
   Serial.println(digitalRead(IRPIN));
   delay(10);

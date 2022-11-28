@@ -1,6 +1,8 @@
+// A2Q1. To interface Seven segment with Arduino and write a program to display numbers form 0 to 9 in seven segment.
+
 int a = 13, b = 12, c = 11, dp = 10, d = 9, e = 8, f = 7, g = 6;
+
 void setup() {
-  // put your setup code here, to run once:
   pinMode(a, OUTPUT);
   pinMode(b, OUTPUT);
   pinMode(c, OUTPUT);
@@ -12,7 +14,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   // Print 0
   digitalWrite(a, LOW);
   digitalWrite(b, LOW);

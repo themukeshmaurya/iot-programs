@@ -1,3 +1,5 @@
+// A1Q11. Write a Program to read five values of temperature and calculate the average of readings. Run the loop up to the average values of temperature and print the Fibonacci series up to the average temperature value.
+
 #include "DHT.h"
 #define DHTPIN 13
 #define DHTTYPE DHT11
@@ -49,7 +51,6 @@ void loop() {
     Serial.print(firstTerm);
     Serial.println(", ");
 
-    // compute the next term
     int nextTerm = firstTerm + secondTerm;
     firstTerm = secondTerm;
     secondTerm = nextTerm;

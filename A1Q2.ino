@@ -1,11 +1,12 @@
+// A1Q2. To interface LED with ESP32(Node MCU-8266) and write a program to turn ON/OFF LED light at interval of every 1 Sec.
+
 #define LED1 13
+
 void setup() {
-  // put your setup code here, to run once:
   pinMode(LED1, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   digitalWrite(LED1, HIGH);
   delay(1000);
   digitalWrite(LED1, LOW);

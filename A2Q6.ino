@@ -1,3 +1,5 @@
+// A2Q6. Write a program to communicate client and server through API. Fetch the led status value from database through php API and ON/OFF the LED or ON/OFF the Buzzer as per status value in a Database.
+
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiMulti.h>
@@ -21,7 +23,7 @@ void setup() {
     delay(1000);
   }
 
-  wifiMulti.addAP("RP", "12345678");
+  wifiMulti.addAP("Praful", "12345678");
   wifiMulti.run();
   if (wifiMulti.run() == WL_CONNECTED) {
     Serial.println("");
@@ -65,9 +67,7 @@ void loop() {
     } else {
       Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
     }
-
     http.end();
   }
-
   delay(500);
 }

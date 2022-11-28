@@ -1,3 +1,5 @@
+// A2Q7. Write a program to communicate client and server through API. Update the led /buzzer status value to database through php API as per LED/Buzzer’s ON/OFF state.
+
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiMulti.h>
@@ -79,7 +81,6 @@ void updateServer(String webUrl) {
   if (httpCode > 0) {
     // HTTP header has been send and Server response header has been handled
     Serial.printf("[HTTP] GET... code: %d\n", httpCode);
-
     // file found at server
     if (httpCode == HTTP_CODE_OK) {
       String payload = http.getString();
@@ -88,6 +89,5 @@ void updateServer(String webUrl) {
   } else {
     Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
   }
-
   http.end();
 }

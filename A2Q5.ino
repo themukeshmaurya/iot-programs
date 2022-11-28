@@ -1,10 +1,11 @@
+// A2Q5. Connect ESP with Wifi and print the IP and MAC address of the device.
+
 #include <ESP8266WiFi.h>
 
 const String WIFI_NAME = "Praful";
-const String WIFI_PASSWORD = "1231231239";
+const String WIFI_PASSWORD = "12345678";
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
   Serial.println("Connecting to... ");
   Serial.println(WIFI_NAME);
@@ -23,5 +24,4 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 }

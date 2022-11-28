@@ -1,3 +1,5 @@
+// A2Q4. Take only 3 readings of ultrasonic sensor (after trigger) at the intervals of 2 seconds then stop taking further readings. Average the readings and find out if that number is palindrome number or not. And display the output in LCD.
+
 #include <LiquidCrystal.h>
 
 #define ECHO 6
@@ -7,7 +9,9 @@ long duration;
 int distance;
 
 int rs = 13, en = 12, d4 = 11, d5 = 10, d6 = 9, d7 = 8, sum, avg, n, r, s = 0, temp;
+
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
 void setup() {
   lcd.begin(16, 2);
   Serial.begin(9600);
@@ -52,5 +56,4 @@ void loop() {
   {
     lcd.print("not palindrome");
   }
-
 }

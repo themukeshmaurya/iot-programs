@@ -1,3 +1,5 @@
+// A1Q10. Write a Program to read three values of temperature and 10 values of humidity. Perform Addition of three temperature readings and print the number is odd or even. Calculate the average of 10 humidity readings.
+
 #include "DHT.h"
 #define DHTPIN 13
 #define DHTTYPE DHT11

@@ -1,3 +1,5 @@
+// A1Q9. Use DHT 11 and glow the red light if temperature goes above 30’c and play the buzzer and blink the green LED if temperature goes below 30’c and stop the buzzer.
+
 #include "DHT.h"
 #define DHTPIN 13
 #define DHTTYPE DHT11
@@ -7,7 +9,6 @@
 DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
   pinMode(DHTPIN, INPUT);
   dht.begin();
@@ -16,7 +17,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  
   float h = dht.readHumidity();
   float f = dht.readTemperature(true);
   float c = dht.readTemperature();

@@ -1,3 +1,5 @@
+// Write a program on pull up button press and event start the seven segment counter by 5,4,3,2,1 then start the taking 10 records on dht11 and perform the average temp of humidity and print that on serial.
+
 #include "DHT.h"
 #define DHTPIN 12
 #define DHTTYPE DHT11

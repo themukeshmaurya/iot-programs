@@ -1,13 +1,14 @@
+// A1Q7. To interface PULLUP BUTTON with Arduino. write a program to turn ON/OFF LED as per the button pullup.
+
 #define PULLUPBTN 13
 #define LED 12
+
 void setup() {
-  // put your setup code here, to run once:
   pinMode(PULLUPBTN, INPUT_PULLUP);
   pinMode(LED, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   if (digitalRead(PULLUPBTN) == LOW) {
     digitalWrite(LED, HIGH);
   } else {
